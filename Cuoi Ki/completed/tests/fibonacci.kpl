@@ -1,0 +1,61 @@
+PROGRAM fibonacci;
+VAR n: integer;
+
+FUNCTION F(n:integer):integer;
+    BEGIN
+        IF n = 0 THEN F := 1 ELSE
+        IF n = 1 THEN F := 1 ELSE F := F(n - 1) + F(n - 2);
+    END;
+
+BEGIN
+    n := READI;
+    CALL WRITEI(F(n));
+END.
+(*Giai thich cau b: 
+    0: J 35 => Nhảy đến dòng lệnh địa chỉ 35 (main)
+    1: J 2 => Nhay đến dòng lệnh địa chỉ 2 (lable F)
+    2: INT 5 => Cấp 1 frame, RV(offset: 0),DL(offset: 1),RA(offset: 2),SL(offfset: 3) và 1 đối số n(offset: 4)
+            Cần tăng con trỏ T lên 5 để lên đầu frame
+    3: LV 0,4 => Lấy giá trị của n, scope hiện tại => level 0, offset 4
+    4: LC 0 => load constant 0
+    5: EQ => equal
+    6: FJ 11 => False Jump : nếu ko thỏa mãn điều kiện => nhảy đến dòng lệnh địa chỉ 11
+    7: LA 0,0 => Level 0, offset 0 =>lấy ra địa chỉ RV, chuẩn bị gán giá trị
+    8: LC 1 => Load constant 1
+    9: ST => store 
+    10: J 34 => Jump tới dòng lệnh địa chỉ 34
+    11: LV 0,4 => Lấy giá trị của n, scope hiện tại => level 0, offset 4
+    12: LC 1 => Load constant 1
+    13: EQ
+    14: FJ => False Jump : nếu ko thỏa mãn điều kiện => nhảy đến dòng lệnh địa chỉ 19
+    15: LA 0,0 => Level 0, offset 0 =>lấy ra địa chỉ RV, chuẩn bị gán giá trị
+    16: LC 1
+    17: ST
+    18: J 34
+    19: LA 0,0
+    20: INT 4 => Tăng con trỏ T lên 4
+    21: LV 0,4 => load n
+    22: LC 1
+    23: SB => trừ (tính n-1)
+    24: DCT 5 => Giảm con trỏ T 5 
+    25: CALL 1,1 => Gọi chương trình con trong chương trình con. Gán cho thanh ghi PC địa chỉ nhãn = 1
+    26: INT 4
+    27: LV 0,4
+    28: LC 2
+    29: SB (tính n-2)
+    30: DCT 5
+    31: CALL 1,1
+    32: AD => add F(n-1) vs F(n-2)
+    33: ST
+    34: EF => exit function F
+    35: INT 5
+    36: LA 0,4
+    37: RI => read integer
+    38: ST
+    39: INT 4
+    40: LV 0,4
+    41: DCT 5
+    42: CALL 0,1
+    43: WRI => write integer
+    44: HL => halt
+*)

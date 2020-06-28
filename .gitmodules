@@ -1,0 +1,3 @@
+[submodule "Cuoi"]
+	path = Cuoi
+	url = https://github.com/hoangdv99/Kpl-compiler.git

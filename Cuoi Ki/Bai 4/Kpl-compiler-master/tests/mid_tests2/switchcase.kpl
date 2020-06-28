@@ -1,0 +1,44 @@
+program ex2;
+var x:integer;
+    y:char;
+begin
+    switch x
+        begin
+        case 0:
+            y:='F';
+            break;
+        case 1:
+            y:='F';
+            break;
+        case 2:
+            y:='F';
+            break;
+        case 3:
+            y:='F';
+            break;
+        case 4:
+            y:='F';
+            break;
+        case 5:
+            y:='D';
+            break;
+        case 6:
+            y:='C';
+            break;
+        case 7:
+            y:='B';
+            break;
+        case 8:
+            y:='B';
+            break;
+        case 9:
+            y:='A';
+            break;
+        case 10:
+            y:='A';
+            break;
+        default:
+            y:= 'F';
+            break;
+    end;
+end.

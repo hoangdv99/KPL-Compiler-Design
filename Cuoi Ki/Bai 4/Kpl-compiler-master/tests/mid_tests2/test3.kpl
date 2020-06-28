@@ -1,0 +1,18 @@
+program exam;
+
+const m = 1;
+      r = 'a';
+      q = +2.;
+      p = "hoangdz";
+var n: double;
+    s: string;
+    a: integer;
+    b: char;
+  
+function F(n: double; s:string):string;
+    begin
+        if n < 0 then F:= " " else F:= F(n-1, s) + F(n-1, s);
+    end;
+begin
+        call writeS(F(10.5, "hello"));
+end.

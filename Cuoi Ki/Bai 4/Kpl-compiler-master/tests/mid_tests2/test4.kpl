@@ -1,0 +1,8 @@
+program e;
+var m : char;
+const x = "hello";
+    t = -.678;
+    y = -2.;
+    z = +2.;
+begin
+end.

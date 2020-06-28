@@ -1,0 +1,13 @@
+PROGRAM fibonacci;
+VAR n: integer;
+
+FUNCTION F(n:integer):integer;
+    BEGIN
+        IF n = 0 THEN F := 1 ELSE
+        IF n = 1 THEN F := 1 ELSE F := F(n - 1) + F(n - 2);
+    END;
+
+BEGIN
+    n := READI;
+    CALL WRITEI(F(n));
+END.

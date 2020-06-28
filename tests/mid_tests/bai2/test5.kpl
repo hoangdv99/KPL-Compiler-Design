@@ -1,0 +1,7 @@
+
+Program Example1; (* ep kieu*)
+var a:double;
+    b:integer;
+Begin
+    a:=5..
+End. (* Example 1 *)
